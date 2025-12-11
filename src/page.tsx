@@ -163,10 +163,16 @@ export default function UnderConstruction() {
             <div className="border-t border-border pt-8 space-y-6 animate-fade-in-up animation-delay-800">
               <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
                 <h4 className="text-2xl font-bold text-foreground">Contactez-nous</h4>
-                <div className="flex items-center gap-2 bg-accent-orange/10 border border-accent-orange rounded-lg px-4 py-2">
-                  <Phone className="w-5 h-5 text-accent-orange" />
-                  <span className="text-lg font-semibold text-accent-orange">27 22 25 76 30</span>
-                </div>
+                 <a
+                      href="tel:+2252722257630"
+                      className="flex items-center gap-3 bg-card border border-border rounded-lg px-4 py-3 hover:border-accent-orange hover:bg-accent-orange/5 transition-all group"
+                    >
+                      <Phone className="w-5 h-5 text-accent-orange group-hover:scale-110 transition-transform" />
+                      <div className="text-sm font-medium text-foreground">
+                        <p>27 22 25 76 30</p>
+                        <p className="text-xs text-muted-foreground">05 64 68 26 22</p>
+                      </div>
+                  </a>
               </div>
 
               <div className="grid lg:grid-cols-2 gap-8">
