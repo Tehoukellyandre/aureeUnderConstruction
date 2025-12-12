@@ -1,21 +1,8 @@
-import type React from "react"
-import aureeBanniere from "./assets/aureeBanniere.png"
-import { Phone, CheckCircle2, MapPin, Send, Hourglass } from "lucide-react"
-import { useState } from "react"
+import {CheckCircle2, Hourglass } from "lucide-react"
+import { Contact } from "./contact"
 
 export default function UnderConstruction() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  })
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
   
-    setFormData({ name: "", email: "", phone: "", message: "" })
-  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -23,7 +10,7 @@ export default function UnderConstruction() {
         {/* Hero Banner Section - Full width on its own row */}
         <div className="w-full relative overflow-hidden">
           <img
-            src={aureeBanniere}
+            src="public/img/aureeBanniere.png"
             alt="Aurée Services - Recrutement, Formation, Placement"
             width={1920}
             height={600}
@@ -159,108 +146,10 @@ export default function UnderConstruction() {
               </div>
             </div>
 
-            {/* Contact Info */}
-            <div className="border-t border-border pt-8 space-y-6 animate-fade-in-up animation-delay-800">
-              <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-                <h4 className="text-2xl font-bold text-foreground">Contactez-nous</h4>
-                 <a
-                      href="tel:+2252722257630"
-                      className="flex items-center gap-3 bg-card border border-border rounded-lg px-4 py-3 hover:border-accent-orange hover:bg-accent-orange/5 transition-all group"
-                    >
-                      <Phone className="w-5 h-5 text-accent-orange group-hover:scale-110 transition-transform" />
-                      <div className="text-sm font-medium text-foreground">
-                        <p>27 22 25 76 30</p>
-                        <p className="text-xs text-muted-foreground">05 64 68 26 22</p>
-                      </div>
-                  </a>
-              </div>
-
-              <div className="grid lg:grid-cols-2 gap-8">
-                {/* Contact Information */}
-                <div className="space-y-4">
-                  <div className="grid gap-4">
-                    <div className="space-y-3">
-                      <div className="flex items-start gap-3 bg-card border border-border rounded-lg px-4 py-3">
-                        <MapPin className="w-5 h-5 text-accent-teal flex-shrink-0 mt-0.5" />
-                        <div className="text-sm font-medium text-foreground">
-                          <p>République de Côte d&apos;Ivoire (Abidjan)</p>
-                          <p>Bingerville, cité Marina</p>
-                          <p className="text-xs text-muted-foreground mt-1">03 BP 23 cidex 03</p>
-                        </div>
-                      </div>
-                      <div className="w-fit h-48 rounded-lg overflow-hidden border border-border">
-                        <iframe 
-                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.3289991631964!2d-3.9191236264188736!3d5.366687635527241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1eda7f8d05967%3A0x115312368c8cfab0!2sAUREE%20SERVICES!5e0!3m2!1sfr!2sbj!4v1765408419838!5m2!1sfr!2sbj" 
-                          width="430" height="300" 
-                          style ={{ border: 0 }}
-                          allowFullScreen 
-                          loading="lazy" 
-                          referrerPolicy="no-referrer-when-downgrade"
-                          title="Localisation Aurée Services - Bingerville, Cité Marina"
-                          >
-                        </iframe>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Contact Form */}
-                <div className="space-y-4">
-                  <h5 className="text-lg font-semibold text-muted-foreground mb-4">Envoyez-nous un message</h5>
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                      <input
-                        type="text"
-                        placeholder="Votre nom *"
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent-teal focus:border-transparent transition-all"
-                      />
-                    </div>
-                    <div>
-                      <input
-                        type="email"
-                        placeholder="Votre email *"
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent-teal focus:border-transparent transition-all"
-                      />
-                    </div>
-                    <div>
-                      <input
-                        type="tel"
-                        placeholder="Votre téléphone"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent-teal focus:border-transparent transition-all"
-                      />
-                    </div>
-                    <div>
-                      <textarea
-                        placeholder="Votre message *"
-                        required
-                        rows={4}
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent-teal focus:border-transparent transition-all resize-none"
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      className="w-full bg-accent-orange hover:bg-accent-orange/90 text-background font-semibold px-6 py-3 rounded-lg transition-all flex items-center justify-center gap-2 hover:scale-105 hover:shadow-lg"
-                    >
-                      <Send className="w-5 h-5" />
-                      Envoyer le message
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </div>
+            <Contact />
+      </div>
+      </div>
           </div>
         </div>
-      </div>
-    </div>
   )
 }
